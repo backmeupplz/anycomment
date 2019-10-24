@@ -1,0 +1,39 @@
+{
+  "name": "anycomment",
+  "version": "1.0.0",
+  "description": "Backend for anycomment service",
+  "main": "dist/app.js",
+  "repository": "https://github.com/backmeupplz/anycomment",
+  "author": "backmeupplz <backmeupplz@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "distribute": "yarn build-ts && node dist/app.js",
+    "develop": "concurrently -k -i -p \"[{name}]\" -n \"Node,TypeScript\" -c \"yellow.bold,cyan.bold\" \"yarn watch-js\" \"yarn watch-ts\"",
+    "build-ts": "tsc --skipLibCheck",
+    "watch-ts": "tsc -w --skipLibCheck",
+    "watch-js": "nodemon dist/app.js"
+  },
+  "devDependencies": {
+    "concurrently": "^5.0.0",
+    "nodemon": "^1.19.4"
+  },
+  "dependencies": {
+    "@hasezoey/typegoose": "^5.9.2",
+    "@koa/cors": "^3.0.0",
+    "@types/dotenv": "^6.1.1",
+    "@types/jsonwebtoken": "^8.3.5",
+    "@types/koa": "^2.0.51",
+    "@types/mongoose": "^5.5.23",
+    "@types/node": "^12.11.6",
+    "axios": "^0.19.0",
+    "dotenv": "^8.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "koa": "^2.10.0",
+    "koa-bodyparser-ts": "^0.3.1",
+    "koa-router-ts": "^3.0.0",
+    "lodash": "^4.17.15",
+    "mongoose": "^5.7.6",
+    "typescript": "^3.6.4"
+  }
+}
